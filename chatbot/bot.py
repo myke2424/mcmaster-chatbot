@@ -18,7 +18,7 @@ class ChatBot:
         responses = self.model.predict([self.data_set.bag_of_words])[0]
         return responses
 
-    def _fetch_most_likely_response(self):
+    def _fetch_most_likely_response(self) -> int:
         """ Returns the index of the response with the highest probability (softmax activation) """
         most_likely_response = np.argmax(self._responses)
         return most_likely_response
@@ -30,7 +30,7 @@ class ChatBot:
 
         return most_likely_response, predicted_class
 
-    def _generate_response(self):
+    def _generate_response(self) -> None:
         """
         Generate a response for the end-user. If the response is greater than the threshold,
         fetch a random response from the highest predicted class.
@@ -45,7 +45,7 @@ class ChatBot:
         else:
             print("I don't understand. I'm a robot so I get things wrong from time to time. Please try again :)")
 
-    def start(self):
+    def start(self) -> None:
         """ Initialize chat-bot... Start CHATTING! """
         print("Start talking with McMaster Student Services (type quit to stop)")
         while True:

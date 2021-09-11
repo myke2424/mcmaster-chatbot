@@ -50,12 +50,12 @@ class DataSet:
 
         self.classes = sorted(self.classes)
 
-    def _dump(self):
+    def _dump(self) -> None:
         """Dump our data in a file """
         args = (self.words, self.classes, self.training_data, self.output)
         dump_to_file(data=args, output_filename="../data.pickle")
 
-    def _create_training_data(self):
+    def _create_training_data(self) -> None:
         self._fill()
         _DataBuilder.build_training_data_set(self)
         self._dump()
@@ -63,7 +63,7 @@ class DataSet:
 
 class _DataBuilder:
     @staticmethod
-    def build_training_data_set(data_set: "DataSet"):
+    def build_training_data_set(data_set: "DataSet") -> None:
         """ """
         for x, pattern in enumerate(data_set.document_patterns):
             # Stems each word in patterns
@@ -86,7 +86,7 @@ class _DataBuilder:
             data_set.output.append(output_position)
 
     @staticmethod
-    def build_bag_of_words(input_words: list, pattern_words: list):
+    def build_bag_of_words(input_words: list, pattern_words: list) -> list:
         """  Create the bag of words used for training our model  """
         bag_of_words = []
         for word in input_words:
