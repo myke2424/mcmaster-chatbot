@@ -2,7 +2,7 @@ import random
 
 import numpy as np
 
-from data_set import DataSet
+from chatbot.data_set import DataSet
 
 
 class ChatBot:

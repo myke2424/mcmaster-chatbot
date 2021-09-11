@@ -1,8 +1,8 @@
 import json
 
-from data_cleaner import DataCleaner
-from exceptions import InvalidDataSetError
-from utils import dump_to_file, fill_list_zeros, load_json
+from chatbot.data_cleaner import DataCleaner
+from chatbot.exceptions import InvalidDataSetError
+from chatbot.utils import dump_to_file, fill_list_zeros, load_json
 
 
 class DataSet:
@@ -53,7 +53,7 @@ class DataSet:
     def _dump(self):
         """Dump our data in a file """
         args = (self.words, self.classes, self.training_data, self.output)
-        dump_to_file(data=args, output_filename="data.pickle")
+        dump_to_file(data=args, output_filename="../data.pickle")
 
     def _create_training_data(self):
         self._fill()
