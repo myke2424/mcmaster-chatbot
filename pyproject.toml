@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "mcmaster-chatbot"
+version = "0.1.0"
+description = "McMaster Student Services AI chat-bot"
+authors = ["myke2424"]
+
+[tool.poetry.dependencies]
+tensorflow = "2.4"
+tflearn = "^0.5.0"
+nltk = "3.0.2"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
